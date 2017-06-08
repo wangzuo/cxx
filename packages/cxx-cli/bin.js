@@ -7,7 +7,7 @@ const build = require('./src/build');
 const init = require('./src/init');
 const deploy = require('./src/deploy');
 const node = require('./src/node');
-const updateSchema = require('./src/update-schema');
+const printSchema = require('./src/print-schema');
 const cwd = process.cwd();
 const cxx = fs.existsSync(`${cwd}/cxx.js`)
   ? require(`${cwd}/cxx.js`)
@@ -35,12 +35,9 @@ program
     deploy(cxx);
   });
 
-program
-  .command('update-schema')
-  .description('update schema')
-  .action(function() {
-    updateSchema();
-  });
+program.command('print-schema').description('print schema').action(function() {
+  printSchema();
+});
 
 program.command('node').description('babel-node').action(node);
 

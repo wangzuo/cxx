@@ -1,5 +1,4 @@
 import babel from 'rollup-plugin-babel';
-// import multiEntry from 'rollup-plugin-multi-entry';
 // import resolve from 'rollup-plugin-node-resolve';
 
 const targets = ['app', 'link', 'environment', 'head', 'client', 'history'];
