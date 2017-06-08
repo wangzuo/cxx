@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'cxx/react';
 import Link from 'cxx/link';
 import Layout from '../components/layout';
 
 export default () =>
-  <Layout title="Index">
-    <h1>index</h1>
+  <Layout titleTemplate="%s" title="Hello World Example">
     <div>
-      <Link href="/hello">hello</Link> &nbsp;
-      <Link href="/world">world</Link>
+      <Link href="/hello">Hello</Link> &nbsp;
+      <Link href="/world">World</Link>
     </div>
   </Layout>;

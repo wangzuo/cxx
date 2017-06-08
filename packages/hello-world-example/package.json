@@ -10,6 +10,7 @@
     "cxx-cli": "^0.1.0-beta.4"
   },
   "scripts": {
-    "start": "cxx server"
+    "start": "cxx server",
+    "build": "cxx build"
   }
 }
