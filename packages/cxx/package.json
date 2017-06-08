@@ -26,11 +26,10 @@
     "jest": "^19.0.2",
     "rollup": "^0.42.0",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-multi-entry": "^2.0.1",
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "name": "cxx",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "cxx",
   "main": "index.js",
   "author": "Wang Zuo <wzuoadjusted@gmail.com>",

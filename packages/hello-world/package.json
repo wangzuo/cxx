@@ -1,0 +1,15 @@
+{
+  "name": "cxx-test",
+  "version": "0.1.0-beta.2",
+  "private": true,
+  "main": "index.js",
+  "author": "Wang Zuo <wzuoadjusted@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cxx": "^0.1.0-beta.2",
+    "cxx-cli": "^0.1.0-beta.2"
+  },
+  "scripts": {
+    "start": "cxx server"
+  }
+}

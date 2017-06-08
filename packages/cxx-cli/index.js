@@ -1,1 +1,1 @@
-throw new Error('npm i cxx-cli -g');
+throw new Error('Donot import cxx-cli');

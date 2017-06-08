@@ -22,7 +22,8 @@ export default class Router extends Component {
     this.matcher = createMatcher(props.routes);
     const match = this.matcher(location);
 
-    if (match.query) {
+    // todo match.query conflicts
+    if (Object.keys(match.query).length) {
       const variables = match.variables ? match.variables(match) : {};
       const operation = createOperationSelector(
         getOperation(match.query),
@@ -50,7 +51,7 @@ export default class Router extends Component {
     history.listen(location => {
       const match = this.matcher(normalizeHref(location));
 
-      if (match.query) {
+      if (Object.keys(match.query).length) {
         const variables = match.variables ? match.variables(match) : {};
         const operation = createOperationSelector(
           getOperation(match.query),

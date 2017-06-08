@@ -26,13 +26,15 @@ module.exports = {
   },
   module: { rules: rules },
   plugins: [
-    new ExtractTextPlugin({ filename: 'styles.css' }),
+    new ExtractTextPlugin({ filename: 'styles.css' })
     // todo: banner on js only
+    /*
     new webpack.BannerPlugin({
       banner: 'require("source-map-support").install();',
       raw: true,
       // entryOnly: true,
       test: /\.js$/
     })
+    */
   ]
 };
