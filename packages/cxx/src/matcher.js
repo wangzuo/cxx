@@ -1,19 +1,5 @@
 import pathToRegexp from 'path-to-regexp';
 
-export default routes => {
-  return location => {
-    for (const path in routes) {
-      const params = match(path, location.pathname);
-
-      if (params) {
-        return Object.assign({}, location, { params }, routes[path]);
-      }
-    }
-
-    return null;
-  };
-};
-
 function match(path, pathname) {
   const keys = [];
   const regexp = pathToRegexp(path, keys);
@@ -30,3 +16,17 @@ function match(path, pathname) {
 
   return params;
 }
+
+export default routes => {
+  return location => {
+    for (const path in routes) {
+      const params = match(path, location.pathname);
+
+      if (params) {
+        return { ...location, params: params, page: routes[path] };
+      }
+    }
+
+    return null;
+  };
+};

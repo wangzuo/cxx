@@ -1,4 +1,3 @@
-import omit from 'lodash/omit';
 import { format } from 'util';
 import serialize from 'serialize-javascript';
 import Head from './head';

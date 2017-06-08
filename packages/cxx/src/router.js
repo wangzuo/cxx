@@ -21,12 +21,13 @@ export default class Router extends Component {
 
     this.matcher = createMatcher(props.routes);
     const match = this.matcher(location);
+    const { page } = match;
 
     // todo match.query conflicts
-    if (Object.keys(match.query).length) {
-      const variables = match.variables ? match.variables(match) : {};
+    if (page.query) {
+      const variables = page.variables ? page.variables(match) : {};
       const operation = createOperationSelector(
-        getOperation(match.query),
+        getOperation(page.query),
         variables
       );
 
@@ -50,11 +51,12 @@ export default class Router extends Component {
 
     history.listen(location => {
       const match = this.matcher(normalizeHref(location));
+      const { page } = match;
 
-      if (Object.keys(match.query).length) {
-        const variables = match.variables ? match.variables(match) : {};
+      if (page.query) {
+        const variables = page.variables ? page.variables(match) : {};
         const operation = createOperationSelector(
-          getOperation(match.query),
+          getOperation(page.query),
           variables
         );
 
@@ -85,14 +87,15 @@ export default class Router extends Component {
   render() {
     const { environment } = this.props;
     const { match } = this.state;
-    const variables = match.variables ? match.variables(match) : {};
+    const { page } = match;
+    const variables = page.variables ? page.variables(match) : {};
 
     return (
       <QueryRenderer
         environment={environment}
-        query={match.query}
+        query={page.query}
         variables={variables}
-        render={result => React.createElement(match.default, result)}
+        render={result => React.createElement(page.default, result)}
       />
     );
   }

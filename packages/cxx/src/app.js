@@ -7,9 +7,8 @@ import graphqlHTTP from 'express-graphql';
 import universalHandler from './handler';
 
 class App {
-  constructor(name, options = {}) {
+  constructor(options = {}) {
     const { routes, schema } = options;
-    this.name = name;
     this.routes = routes;
     this.schema = schema;
     // this.reducers = reducers;
@@ -70,7 +69,7 @@ class App {
     });
 
     return this.app.listen(port, () => {
-      console.log(`==> ${this.name} listening on ${port}`);
+      console.log(`==> listening on ${port}`);
     });
   }
 }

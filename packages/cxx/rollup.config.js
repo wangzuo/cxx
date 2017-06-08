@@ -7,5 +7,6 @@ export default targets.map(target => ({
   entry: `src/${target}.js`,
   dest: `lib/${target}.js`,
   format: 'cjs',
-  plugins: [babel()]
+  plugins: [babel()],
+  external: ['babel-polyfill']
 }));
