@@ -6,3 +6,10 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.nav {
+  a {
+    display: inline-block;
+    margin-right: 6px;
+  }
+}

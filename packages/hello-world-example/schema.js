@@ -6,11 +6,11 @@ export default new GraphQLSchema({
     fields: {
       hello: {
         type: GraphQLString,
-        resolve: () => 'hello'
+        resolve: () => 'Hello'
       },
       world: {
         type: GraphQLString,
-        resolve: () => 'world'
+        resolve: () => 'World'
       }
     }
   })

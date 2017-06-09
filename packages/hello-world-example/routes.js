@@ -1,5 +1,5 @@
 module.exports = {
-  '/': require('./pages/index'),
-  '/hello': require('./pages/hello'),
-  '/world': require('./pages/world')
+  '/': require('./pages/Home'),
+  '/hello': require('./pages/Hello'),
+  '/world': require('./pages/World')
 };

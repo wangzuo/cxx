@@ -1,12 +1,9 @@
-import React from 'cxx/react';
-import Link from 'cxx/link';
+import React from 'react';
 import Layout from '../components/layout';
 
-/*
-export const query = graphql`{ hello }`;
+export const query = graphql`query HelloQuery { hello }`;
 
-export const variables = {};
-*/
-
-export default () =>
-  <Layout title="Hello"><Link href="/">Back</Link><h1>Hello</h1></Layout>;
+export default ({ props }) =>
+  <Layout title="Hello">
+    <h1>{props.hello}</h1>
+  </Layout>;
