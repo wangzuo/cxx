@@ -9,6 +9,6 @@ import history from './history';
 export default async ({ routes }) => {
   render(
     <Router environment={environment} routes={routes} history={history} />,
-    document.getElementById('root')
+    document.getElementById('__cxx__')
   );
 };

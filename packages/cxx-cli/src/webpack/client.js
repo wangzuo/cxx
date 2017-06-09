@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
 const rules = require('./rules');
-const cwd = process.cwd();
 
 module.exports = {
   entry: {},
@@ -17,6 +16,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendors',
       minChunks: module => {
+        // lerna repo hack
+        if (module.context && module.context.indexOf('packages/cxx') !== -1) {
+          return true;
+        }
         return module.context && module.context.indexOf('node_modules') !== -1;
       }
     }),
@@ -24,7 +27,6 @@ module.exports = {
       name: 'manifest',
       minChunks: Infinity
     })
-
     // new Visualizer()
   ]
 };

@@ -74,7 +74,7 @@ export default (markup, initialState, options) => {
     <link rel="stylesheet" href="${asset('client.css')}" type="text/css" />
   </head>
   <body>
-    <div id="root">${markup}</div>
+    <div id="__cxx__">${markup}</div>
     ${engineScript}
     <script src="${asset('manifest.js')}"></script>
     <script src="${asset('vendors.js')}"></script>
