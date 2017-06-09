@@ -9,9 +9,16 @@ module.exports = {
   externals: [
     function(context, request, callback) {
       if (request[0] !== '/' && request[0] !== '.') {
+        // if (request === 'react') {
+        //   return callback(null, `commonjs cxx/react`);
+        // }
+
+        // if (request === 'react-dom') {
+        //   return callback(null, `commonjs cxx/react-dom`);
+        // }
+
         return callback(null, `commonjs ${request}`);
       }
-
       callback();
     }
   ],

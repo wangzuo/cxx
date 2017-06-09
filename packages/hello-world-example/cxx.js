@@ -1,4 +1,4 @@
 module.exports = {
-  name: 'hello-world-exampel',
+  name: 'hello-world-example',
   port: 5000
 };

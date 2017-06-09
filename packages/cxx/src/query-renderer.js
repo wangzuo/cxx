@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import areEqual from 'fbjs/lib/areEqual';
 import { createOperationSelector, getOperation } from 'relay-runtime';
 
-class QueryRenderer extends Component {
+class QueryRenderer extends React.Component {
   constructor(props, context) {
     super(props, context);
     let { query, variables } = props;

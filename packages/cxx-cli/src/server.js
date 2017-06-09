@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const path = require('path');
 const debug = require('debug')('cli');
 const getPort = require('get-port');
 const webpack = require('webpack');
@@ -35,6 +36,14 @@ module.exports = function(cxx) {
       'Access-Control-Allow-Origin': '*'
     }
   });
+
+  spawnWithLog(path.join(__dirname, '../node_modules/.bin/relay-compiler'), [
+    '--src',
+    cwd,
+    '--schema',
+    path.join(cwd, 'schema.graphql'),
+    '--watch'
+  ]);
 
   getPort().then(webpackDevServerPort => {
     debug('webpackDevServer on', webpackDevServerPort);
