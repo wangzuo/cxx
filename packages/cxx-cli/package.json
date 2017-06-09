@@ -4,7 +4,7 @@
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",
-    "babel-preset-cxx": "^0.1.0-beta.5",
+    "babel-preset-cxx": "^0.1.0-beta.6",
     "babel-register": "^6.24.1",
     "classnames": "^2.2.5",
     "commander": "^2.9.0",
@@ -29,7 +29,7 @@
     "webpack-merge": "^4.1.0",
     "webpack-visualizer-plugin": "^0.1.11"
   },
-  "version": "0.1.0-beta.5",
+  "version": "0.1.0-beta.6",
   "description": "cxx-cli",
   "main": "index.js",
   "bin": {

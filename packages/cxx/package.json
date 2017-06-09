@@ -32,7 +32,7 @@
     "rollup-watch": "^4.0.0"
   },
   "name": "cxx",
-  "version": "0.1.0-beta.5",
+  "version": "0.1.0-beta.6",
   "description": "cxx",
   "main": "index.js",
   "author": "Wang Zuo <wzuoadjusted@gmail.com>",
