@@ -4,7 +4,6 @@ const Module = require('module');
 module.exports = () => {
   require('babel-polyfill');
   const register = require('babel-register');
-
   register({
     presets: [require.resolve('babel-preset-cxx')]
   });

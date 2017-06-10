@@ -1,5 +1,4 @@
 const fs = require('fs');
-const shell = require('shelljs');
 const path = require('path');
 const cwd = process.cwd();
 const { printSchema } = require(`${cwd}/node_modules/cxx/graphql`); // todo
