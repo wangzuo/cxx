@@ -1,5 +1,3 @@
-// import 'todomvc-common';
-
 import React from 'react';
 import TodoApp from '../components/TodoApp';
 
