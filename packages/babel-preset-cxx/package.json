@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-cxx",
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.8",
   "description": "babel-preset-cxx",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-plugin-relay": "^1.0.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.2",
