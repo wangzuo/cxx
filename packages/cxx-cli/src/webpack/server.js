@@ -28,9 +28,6 @@ module.exports = {
     libraryTarget: 'commonjs-module'
   },
   performance: { hints: false },
-  resolveLoader: {
-    modules: [path.resolve(__dirname, '../..', 'node_modules')]
-  },
   module: { rules: rules },
   plugins: [
     new ExtractTextPlugin({ filename: 'styles.css' })

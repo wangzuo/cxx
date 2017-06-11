@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const program = require('commander');
-const server = require('./src/server');
+const start = require('./src/start');
 const build = require('./src/build');
 const init = require('./src/init');
 const deploy = require('./src/deploy');
@@ -14,8 +14,8 @@ const cxx = fs.existsSync(`${cwd}/cxx.js`)
   ? require(`${cwd}/cxx.js`)
   : fs.existsSync(`${cwd}/cxx.json`) ? require(`${cwd}/cxx.js`) : {};
 
-program.command('server').description('start server').action(function(options) {
-  server(cxx);
+program.command('start').description('start server').action(function(options) {
+  start(cxx);
 });
 
 program

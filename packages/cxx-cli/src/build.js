@@ -1,9 +1,11 @@
 const _ = require('lodash');
+const path = require('path');
 const fs = require('fs');
 const debug = require('debug')('cli');
 const webpack = require('webpack');
 const rimraf = require('rimraf');
 const { spawnSync } = require('child_process');
+const shell = require('shelljs');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const clientConfig = require('./webpack/client.prod');
 const serverConfig = require('./webpack/server.prod');
@@ -43,6 +45,16 @@ module.exports = function(cxx, cb) {
   });
 
   rimraf.sync('./builds');
+
+  shell.exec(
+    [
+      path.join(__dirname, '../node_modules/.bin/relay-compiler'),
+      '--src',
+      cwd,
+      '--schema',
+      path.join(cwd, 'schema.graphql')
+    ].join(' ')
+  );
 
   webpack([clientConfig, serverConfig], (err, stats) => {
     if (err) {

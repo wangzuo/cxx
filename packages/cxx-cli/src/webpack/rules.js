@@ -3,14 +3,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = [
   {
-    test: /\.example.js$/,
-    loader: 'example-loader',
-    enforce: 'pre'
-  },
-  {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
-    loader: 'babel-loader',
+    loader: require.resolve('babel-loader'),
     options: {
       presets: [require.resolve('babel-preset-cxx')],
       cacheDirectory: true
@@ -21,7 +16,7 @@ module.exports = [
     loader: ExtractTextPlugin.extract({
       use: [
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
           options: {
             modules: true,
             camelCase: true,
@@ -29,7 +24,7 @@ module.exports = [
           }
         },
         {
-          loader: 'postcss-loader',
+          loader: require.resolve('postcss-loader'),
           options: {
             ident: 'postcss',
             plugins: () => [
@@ -44,17 +39,20 @@ module.exports = [
             ]
           }
         },
-        'sass-loader'
+        require.resolve('sass-loader')
       ]
     })
   },
   {
     test: /\.(eot|ttf|woff|woff2)$/,
-    loader: 'file-loader?name=fonts/[name]-[hash].[ext]'
+    loader: require.resolve('file-loader'),
+    options: {
+      name: 'fonts/[name]-[hash].[ext]'
+    }
   },
   {
     test: /\.(jpg|png|svg)$/,
-    loader: 'file-loader',
+    loader: require.resolve('file-loader'),
     options: {
       name: '[path][name]-[hash].[ext]'
     }

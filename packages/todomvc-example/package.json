@@ -16,7 +16,7 @@
     "cxx-cli": "^0.1.0-beta.10"
   },
   "scripts": {
-    "start": "cxx server",
+    "start": "cxx start",
     "build": "cxx build",
     "deploy": "cxx deploy"
   }

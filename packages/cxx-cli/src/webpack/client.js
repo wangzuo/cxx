@@ -7,9 +7,6 @@ const rules = require('./rules');
 
 module.exports = {
   entry: {},
-  resolveLoader: {
-    modules: [path.resolve(__dirname, '../..', 'node_modules')]
-  },
   performance: { hints: false },
   module: { rules },
   plugins: [
