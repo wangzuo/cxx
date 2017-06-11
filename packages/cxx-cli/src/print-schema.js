@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const cwd = process.cwd();
-const { printSchema } = require(`${cwd}/node_modules/cxx/graphql`); // todo
 
 module.exports = () => {
+  const { printSchema } = require(`${cwd}/node_modules/cxx/graphql`); // todo
   require('babel-polyfill');
   const register = require('babel-register');
   register({
