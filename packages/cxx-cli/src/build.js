@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'production';
-
 const _ = require('lodash');
 const fs = require('fs');
 const debug = require('debug')('cli');
@@ -13,8 +11,9 @@ const serverConfig = require('./webpack/server.prod');
 const cwd = process.cwd();
 
 module.exports = function(cxx, cb) {
-  const { name, port } = cxx;
-  const publicPath = `/`;
+  process.env.NODE_ENV = 'production';
+  const options = Object.assign({ publicPath: '/' }, cxx, cxx.production);
+  const { name, port, publicPath } = options;
 
   _.merge(clientConfig, {
     entry: {

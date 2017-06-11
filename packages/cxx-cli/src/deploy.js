@@ -3,10 +3,11 @@ const shell = require('shelljs');
 const build = require('./build');
 
 module.exports = function(cxx) {
-  console.log('start building');
+  process.env.NODE_ENV = 'production';
+  console.log('==> start building');
   build(cxx, () => {
-    console.log('building done');
-    console.log('start deploying');
+    console.log('==> building done');
+    console.log('==> start deploying');
     const { name } = cxx;
     const remote = 'onepunch';
 
@@ -17,7 +18,6 @@ module.exports = function(cxx) {
         apps: [{
           name: '${name}',
           script: '/home/deploy/apps/${name}/server.js',
-          instances: 2,
           max_memory_restart: '100M',
           env: {
             "NODE_ENV": "production"
@@ -39,6 +39,6 @@ module.exports = function(cxx) {
     shell.exec(
       `rsync -avz -e "ssh" --delete builds/public/ ${remote}:public/${name}`
     );
-    console.log('deploying done');
+    console.log('==> deploying done');
   });
 };

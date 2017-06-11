@@ -1,4 +1,8 @@
 module.exports = {
   name: 'todomvc-example',
-  port: 6000
+  port: 5000,
+  production: {
+    port: 6000,
+    publicPath: '//assets.onepunch.co/todomvc-example/'
+  }
 };
