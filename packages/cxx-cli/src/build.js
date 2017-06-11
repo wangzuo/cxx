@@ -1,4 +1,5 @@
-// todo: build for both dev as process.env.NODE_ENV
+process.env.NODE_ENV = 'production';
+
 const _ = require('lodash');
 const fs = require('fs');
 const debug = require('debug')('cli');
@@ -13,7 +14,7 @@ const cwd = process.cwd();
 
 module.exports = function(cxx, cb) {
   const { name, port } = cxx;
-  const publicPath = `//assets.onepunch.co/${name}/`;
+  const publicPath = `/`;
 
   _.merge(clientConfig, {
     entry: {
@@ -28,7 +29,7 @@ module.exports = function(cxx, cb) {
   clientConfig.plugins = clientConfig.plugins.concat([
     new ManifestPlugin({
       fileName: 'assets.json',
-      publicPath: publicPath
+      publicPath
     })
   ]);
 

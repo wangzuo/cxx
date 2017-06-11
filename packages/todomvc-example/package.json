@@ -6,6 +6,7 @@
   "author": "Wang Zuo <wzuoadjusted@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.2.5",
     "cxx": "^0.1.0-beta.6",
     "cxx-cli": "^0.1.0-beta.8",
     "prop-types": "^15.5.10",
@@ -14,6 +15,7 @@
   },
   "scripts": {
     "start": "cxx server",
-    "build": "cxx build"
+    "build": "cxx build",
+    "deploy": "cxx deploy"
   }
 }

@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "cxx server",
-    "build": "cxx build"
+    "build": "cxx build",
+    "deploy": "cxx deploy"
   }
 }

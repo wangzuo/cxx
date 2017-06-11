@@ -1,13 +1,12 @@
 const fs = require('fs');
 const shell = require('shelljs');
-const debug = require('debug')('cli');
 const build = require('./build');
 
 module.exports = function(cxx) {
-  debug('start building');
+  console.log('start building');
   build(cxx, () => {
-    debug('building done');
-    debug('start deploying');
+    console.log('building done');
+    console.log('start deploying');
     const { name } = cxx;
     const remote = 'onepunch';
 
@@ -40,6 +39,6 @@ module.exports = function(cxx) {
     shell.exec(
       `rsync -avz -e "ssh" --delete builds/public/ ${remote}:public/${name}`
     );
-    debug('deploying done');
+    console.log('deploying done');
   });
 };

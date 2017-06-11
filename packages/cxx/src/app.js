@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import path from 'path';
 import express from 'express';
 import { graphql } from 'graphql';
 import bodyParser from 'body-parser';
@@ -37,11 +38,7 @@ class App {
 
   start(options) {
     const { port, webpackDevServerPort, assets } = options;
-
-    // todo
-    this.app.use('/favicon.ico', (req, res) => {
-      res.sendStatus(404);
-    });
+    this.app.use(express.static(path.join(process.cwd(), 'public')));
 
     if (this.schema) {
       this.app.use(

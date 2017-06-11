@@ -1,4 +1,4 @@
 module.exports = {
-  name: 'todo-example',
-  port: 5000
+  name: 'todomvc-example',
+  port: 6000
 };
