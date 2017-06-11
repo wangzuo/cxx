@@ -1,13 +1,13 @@
 {
   "name": "hello-world-example",
-  "version": "0.1.0-beta.8",
+  "version": "0.1.0-beta.9",
   "private": true,
   "main": "index.js",
   "author": "Wang Zuo <wzuoadjusted@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cxx": "^0.1.0-beta.6",
-    "cxx-cli": "^0.1.0-beta.8",
+    "cxx": "^0.1.0-beta.9",
+    "cxx-cli": "^0.1.0-beta.9",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
