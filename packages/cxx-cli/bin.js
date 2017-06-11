@@ -8,6 +8,7 @@ const init = require('./src/init');
 const deploy = require('./src/deploy');
 const node = require('./src/node');
 const printSchema = require('./src/print-schema');
+const packageJSON = require('./package.json');
 const cwd = process.cwd();
 const cxx = fs.existsSync(`${cwd}/cxx.js`)
   ? require(`${cwd}/cxx.js`)
@@ -40,5 +41,9 @@ program.command('print-schema').description('print schema').action(function() {
 });
 
 program.command('node').description('babel-node').action(node);
+
+program.command('version').description('version').action(function() {
+  console.log(packageJSON.version);
+});
 
 program.parse(process.argv);
