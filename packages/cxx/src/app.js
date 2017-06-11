@@ -1,7 +1,6 @@
 import 'babel-polyfill';
 import path from 'path';
 import express from 'express';
-import { graphql } from 'graphql';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
@@ -12,8 +11,6 @@ class App {
     const { routes, schema } = options;
     this.routes = routes;
     this.schema = schema;
-    // this.reducers = reducers;
-    // this.Root = Root;
     this.options = options;
     this.init();
   }
@@ -71,4 +68,4 @@ class App {
   }
 }
 
-export default App;
+export default options => new App(options);
