@@ -7,6 +7,8 @@ module.exports = () => {
   const name = path.basename(cwd);
   console.log('==> cxx init', name);
 
+  shell.exec('git init');
+
   const packageJSON = {
     name: name,
     version: '0.1.0',

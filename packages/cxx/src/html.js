@@ -7,6 +7,7 @@ export default (markup, initialState, options) => {
   const { title, titleTemplate, metas, links, ga } = Head.rewind() || {};
 
   function asset(filename) {
+    // todo: remove env
     if (process.env.NODE_ENV === 'production') return assets[filename];
     return `http://localhost:${port}/${filename}`;
   }

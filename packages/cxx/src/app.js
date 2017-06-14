@@ -25,13 +25,9 @@ class App {
     this.app = app;
   }
 
-  use(route, fn) {
-    if (fn) {
-      this.app.use(route, fn);
-    } else {
-      this.app.use(route);
-    }
-  }
+  use(...args) { this.app.use(...args); }
+  get(...args) { this.app.get(...args); }
+  post(...args) { this.app.post(...args); }
 
   start(options) {
     const { port, webpackDevServerPort, assets } = options;

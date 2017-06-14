@@ -56,6 +56,7 @@ module.exports = function(cxx, cb) {
     ].join(' ')
   );
 
+  // todo: output build progress
   webpack([clientConfig, serverConfig], (err, stats) => {
     if (err) {
       console.error(err.stack || err);
