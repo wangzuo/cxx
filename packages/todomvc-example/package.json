@@ -1,19 +1,19 @@
 {
   "name": "todomvc-example",
-  "version": "0.1.0-beta.12",
+  "version": "0.1.0-beta.13",
   "private": true,
   "main": "index.js",
   "author": "Wang Zuo <wzuoadjusted@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
-    "cxx": "^0.1.0-beta.12",
+    "cxx": "^0.1.0-beta.13",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "cxx-cli": "^0.1.0-beta.12"
+    "cxx-cli": "^0.1.0-beta.13"
   },
   "scripts": {
     "start": "cxx start",
