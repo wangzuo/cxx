@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default 404 1`] = `"404 not found"`;
+
+exports[`render with head 1`] = `
+"<!doctype html>
+  <html>
+    <head>
+      <title data-react-helmet=\\"true\\">test</title>
+      
+      
+      
+      </head>
+    <body >
+      <div id=\\"__cxx__\\"><div data-reactroot=\\"\\" data-reactid=\\"1\\" data-react-checksum=\\"1171596156\\"><!-- react-empty: 2 --><!-- react-text: 3 -->test<!-- /react-text --></div></div>
+      <script>var __DATA__= {};</script>
+      
+      
+      
+      
+    </body>
+  </html>"
+`;
+
+exports[`render without schema 1`] = `
+"<!doctype html>
+  <html>
+    <head>
+      <title data-react-helmet=\\"true\\"></title>
+      
+      
+      
+      </head>
+    <body >
+      <div id=\\"__cxx__\\"><div data-reactroot=\\"\\" data-reactid=\\"1\\" data-react-checksum=\\"-1145761510\\">test</div></div>
+      <script>var __DATA__= {};</script>
+      
+      
+      
+      
+    </body>
+  </html>"
+`;

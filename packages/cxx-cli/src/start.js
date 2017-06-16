@@ -56,10 +56,18 @@ module.exports = function(cxx) {
     const serverCompiler = webpack(serverConfig);
     let serverProcess;
 
+    const asset = filename =>
+      `http://localhost:${webpackDevServerPort}/${filename}`;
+
     function startServer() {
       const options = {
         port,
-        webpackDevServerPort
+        assets: {
+          'client.js': asset('client.js'),
+          'client.css': asset('client.css'),
+          'vendors.js': asset('vendors.js'),
+          'manifest.js': asset('manifest.js')
+        }
       };
       return spawnWithLog('node', [
         '-e',

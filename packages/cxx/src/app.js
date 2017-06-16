@@ -4,7 +4,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import graphqlHTTP from 'express-graphql';
-import universalHandler from './handler';
+import renderer from './renderer';
 
 class App {
   constructor(options = {}) {
@@ -12,6 +12,7 @@ class App {
     this.routes = routes;
     this.schema = schema;
     this.options = options;
+    this.renderer = renderer(routes, schema);
     this.init();
   }
 
@@ -25,9 +26,15 @@ class App {
     this.app = app;
   }
 
-  use(...args) { this.app.use(...args); }
-  get(...args) { this.app.get(...args); }
-  post(...args) { this.app.post(...args); }
+  use(...args) {
+    this.app.use(...args);
+  }
+  get(...args) {
+    this.app.get(...args);
+  }
+  post(...args) {
+    this.app.post(...args);
+  }
 
   start(options) {
     const { port, webpackDevServerPort, assets } = options;
@@ -43,13 +50,18 @@ class App {
       );
     }
 
+    const wrap = fn => (...args) => fn(...args).catch(args[2]);
+
     if (this.routes) {
       this.app.get(
         '*',
-        universalHandler(
-          { routes: this.routes, schema: this.schema },
-          { assets, webpackDevServerPort }
-        )
+        wrap(async (req, res, next) => {
+          const html = await this.renderer(req.originalUrl, {
+            context: req,
+            assets
+          });
+          res.send(html);
+        })
       );
     }
 

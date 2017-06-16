@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import areEqual from 'fbjs/lib/areEqual';
 import { createOperationSelector, getOperation } from 'relay-runtime';
 
-class QueryRenderer extends React.Component {
+class QueryRenderer extends Component {
   constructor(props, context) {
     super(props, context);
     let { query, variables } = props;
@@ -76,9 +76,6 @@ class QueryRenderer extends React.Component {
       !areEqual(nextProps.variables, this.props.variables)
     ) {
       const { query, variables } = nextProps;
-      // TODO (#16225453) QueryRenderer works with old and new environment, but
-      // the flow typing doesn't quite work abstracted.
-      // $FlowFixMe
       const environment = nextProps.environment;
       if (query) {
         const {
