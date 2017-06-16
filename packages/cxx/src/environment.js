@@ -24,6 +24,9 @@ const environment = new Environment({
   store
 });
 
-if (typeof window !== 'undefined') window.environment = environment;
+if (typeof window !== 'undefined') {
+  window.cxx = window.cxx || {};
+  window.cxx.environment = environment;
+}
 
 export default environment;

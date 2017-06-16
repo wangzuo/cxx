@@ -50,6 +50,7 @@ export default class Router extends Component {
     const { routes, environment, history } = this.props;
 
     history.listen(location => {
+      console.log('location', location);
       const match = this.matcher(normalizeHref(location));
       const { page } = match;
 
