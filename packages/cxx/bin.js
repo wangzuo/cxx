@@ -13,17 +13,6 @@ const cxx = fs.existsSync(`${cwd}/cxx.js`)
   ? require(`${cwd}/cxx.js`)
   : fs.existsSync(`${cwd}/cxx.json`) ? require(`${cwd}/cxx.js`) : {};
 
-program.command('start').description('start server').action(function(options) {
-  start(cxx);
-});
-
-program
-  .command('build')
-  .description('build server & client')
-  .action(function(options) {
-    build(cxx);
-  });
-
 program
   .command('deploy')
   .description('deploy app to remote')
